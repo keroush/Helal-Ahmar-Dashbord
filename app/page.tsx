@@ -521,7 +521,7 @@ export default function Home() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xs shadow-md p-1.5 relative border-l-2 border-red-300 transform transition-all duration-300 hover:shadow-lg"
+                  className="bg-white rounded-xs shadow-md p-1.5 relative border-l-2 border-red-300 transform transition-all duration-300 hover:shadow-lg hover:bg-blue-50 hover:border-blue-400"
                   style={{
                     backgroundImage: 'repeating-linear-gradient(transparent, transparent 20px, #e5e7eb 20px, #e5e7eb 21px)',
                     backgroundPosition: '0 0',
@@ -550,7 +550,7 @@ export default function Home() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xs shadow-md p-1.5 relative border-l-2 border-red-300 transform transition-all duration-300 hover:shadow-lg"
+                  className="bg-white rounded-xs shadow-md p-1.5 relative border-l-2 border-red-300 transform transition-all duration-300 hover:shadow-lg hover:bg-blue-50 hover:border-blue-400"
                   style={{
                     backgroundImage: 'repeating-linear-gradient(transparent, transparent 20px, #e5e7eb 20px, #e5e7eb 21px)',
                     backgroundPosition: '0 0',
@@ -582,7 +582,7 @@ export default function Home() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xs shadow-md p-1.5 relative border-l-2 border-red-300 transform transition-all duration-300 hover:shadow-lg"
+                  className="bg-white rounded-xs shadow-md p-1.5 relative border-l-2 border-red-300 transform transition-all duration-300 hover:shadow-lg hover:bg-blue-50 hover:border-blue-400"
                   style={{
                     backgroundImage: 'repeating-linear-gradient(transparent, transparent 20px, #e5e7eb 20px, #e5e7eb 21px)',
                     backgroundPosition: '0 0',
@@ -639,7 +639,7 @@ export default function Home() {
                'تعداد داوطلبین بر اساس درجات'}
             </h2>
             {chartView === 'cities' ? (
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto chart-scrollbar">
               <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200">
                 {(() => {
                   // City data with two sets - using maximum values
@@ -705,7 +705,7 @@ export default function Home() {
               </div>
             </div>
             ) : chartView === 'ratio' ? (
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto chart-scrollbar">
                 <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200">
                   {(() => {
                     // Get city totals from the cities chart data
@@ -809,7 +809,7 @@ export default function Home() {
                 </div>
               </div>
             ) : (
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto chart-scrollbar">
                 <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200">
                   {(() => {
                     const ranksData = [

@@ -22,3 +22,22 @@ body {
   width: fit-content;
 }
 
+/* Custom scrollbar for charts */
+.chart-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.chart-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.chart-scrollbar::-webkit-scrollbar-thumb {
+  background: #F40009;
+  border-radius: 10px;
+}
+
+.chart-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #d60008;
+}
+
