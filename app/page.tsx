@@ -313,7 +313,7 @@ export default function Home() {
               <div className="max-w-xl mx-auto space-y-4">
             {/* Title Card */}
             <div className="bg-white rounded-lg shadow-2xl p-6 transform transition-all duration-300">
-              <h1 className="text-2xl font-bold text-coca-cola-red text-center leading-relaxed">
+              <h1 className="text-md font-bold text-coca-cola-red text-center leading-relaxed">
                 داشبورد رصد و پایش نیروی داوطلبی و خدمات ارائه شده توسط جمعیت هلال احمر
               </h1>
             </div>
@@ -359,7 +359,8 @@ export default function Home() {
           </div>
 
               {/* Incident Type Cards Row */}
-          <div className="grid grid-cols-7 gap-3">
+          <div className="max-w-2xl mx-auto">
+            <div className="grid grid-cols-7 gap-3">
             {incidentTypes.slice(0, 7).map((incident, index) => {
               const style = stickyNoteStyles[index];
               const isSelected = selectedCardIndex === index;
@@ -387,9 +388,11 @@ export default function Home() {
                 </div>
               );
             })}
+            </div>
           </div>
 
           {/* Total Card */}
+          <div className="max-w-2xl mx-auto">
           <div className="bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-2xl p-2 transform transition-all duration-300 border-2 border-gray-600">
             {selectedCardIndex !== null ? (
               <div className="grid grid-cols-2 gap-2">
@@ -425,6 +428,7 @@ export default function Home() {
                 })}
               </div>
             )}
+          </div>
           </div>
             </div>
           
