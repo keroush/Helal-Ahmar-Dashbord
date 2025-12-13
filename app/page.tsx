@@ -204,6 +204,18 @@ export default function Home() {
   // Get incident types based on selected time
   const incidentTypes = selectedTime === '72' ? incidentTypes72h : selectedTime === '48' ? incidentTypes48h : incidentTypes24h;
   
+  // SVG Logo mapping for each incident type
+  const incidentLogos: { [key: string]: string } = {
+    'آوار': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>`,
+    'تجمعات انبوه': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    'ترافیکی': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="M12 15v5"/><path d="M8 20h8"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>`,
+    'جوی': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 13v8M8 13v8M12 15v8M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg>`,
+    'صنعتی و کارگاهی': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM3 9h18M9 3v18"/></svg>`,
+    'فوریت های پزشکی': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+    'کوهستان': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l4 8 5-5 5 15H2L8 3z"/></svg>`,
+    'زمین لرزه': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>`,
+  };
+  
   // Calculate total (sum of all or just selected card)
   const totalCount = selectedCardIndex !== null
     ? incidentTypes[selectedCardIndex].count
@@ -359,21 +371,39 @@ export default function Home() {
           </div>
 
               {/* Incident Type Cards Row */}
-          <div className="max-w-2xl mx-auto">
-            <div className="grid grid-cols-7 gap-3">
+          <div 
+            className="max-w-2xl mx-auto relative"
+          >
+            {selectedCardIndex !== null && (
+              <div 
+                className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+                style={{
+                  opacity: 0.3,
+                  width: '110px',
+                  height: '110px',
+                  color: 'white',
+                  top: '5%',
+                  left: `${selectedCardIndex === 6 ? '72' : selectedCardIndex * 15 + 10}%`,
+                  animation: 'fadeIn 0.2s ease-in',
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: incidentLogos[incidentTypes[selectedCardIndex]?.title] || ''
+                }}
+              />
+            )}
+            <div className="grid grid-cols-7 gap-3 relative z-10">
             {incidentTypes.slice(0, 7).map((incident, index) => {
               const style = stickyNoteStyles[index];
               const isSelected = selectedCardIndex === index;
-              const shouldShow = selectedCardIndex === null || selectedCardIndex === index;
+              const hasSelection = selectedCardIndex !== null;
               
               return (
                 <div
                   key={index}
                   onClick={() => setSelectedCardIndex(isSelected ? null : index)}
-                  className={`${style.bg} ${style.rotation} rounded-sm shadow-lg p-1 py-6 transform transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:z-10 relative border-2 cursor-pointer ${
-                    isSelected ? 'border-coca-cola-red border-opacity-80 shadow-2xl scale-105' : 'border-gray-300/30'
-                  } ${
-                    shouldShow ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                  className={`${style.bg} ${style.rotation} rounded-sm shadow-lg p-1 py-6 transform transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:z-10 relative border-2 cursor-pointer overflow-hidden ${
+                    isSelected ? 'border-coca-cola-red border-opacity-80 shadow-2xl scale-105 opacity-100' : 
+                    hasSelection ? 'border-gray-300/30 opacity-60' : 'border-gray-300/30 opacity-100'
                   }`}
                   style={{
                     boxShadow: isSelected 
@@ -381,7 +411,23 @@ export default function Home() {
                       : '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.05)',
                   }}
                 >
-                  <div className="text-center">
+                  {!isSelected && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                      style={{
+                        opacity: 0.08,
+                        width: '80%',
+                        height: '80%',
+                        color: 'white',
+                        left: '10%',
+                        top: '10%',
+                      }}
+                      dangerouslySetInnerHTML={{
+                        __html: incidentLogos[incident.title] || ''
+                      }}
+                    />
+                  )}
+                  <div className="flex flex-col items-center text-center relative z-10">
                     <p className="text-sm font-semibold text-gray-700 mb-2">{incident.title}</p>
                     <p className="text-2xl font-bold text-gray-800">{incident.count}</p>
                   </div>
