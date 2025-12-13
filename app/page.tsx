@@ -538,14 +538,11 @@ export default function Home() {
               <h2 className="text-lg font-bold text-coca-cola-red text-right flex-shrink-0 w-32">سازمان داوطلبان</h2>
               <div className="grid grid-cols-8 gap-1 flex-1">
               {[
-                { label: 'در دست تکمیل', value: 45256 },
-                { label: 'غنچه های هلال', value: 18305 },
-                { label: 'دانش آموزی', value: 5137 },
-                { label: 'دانشجویی', value: 604 },
-                { label: 'طلاب', value: 89234 },
-                { label: 'روستایی و عشایری', value: 234567 },
-                { label: 'جوانان', value: 45678 },
-                { label: 'ایثار', value: 12345 },
+                { label: 'در دست تکمیل', value: 798333 },
+                { label: 'حمایت', value: 35357 },
+                { label: 'هدایت', value: 71831 },
+                { label: 'مشارکت', value: 249129 },
+                { label: 'مهارت', value: 55577 },
               ].map((item, index) => (
                 <div
                   key={index}
@@ -570,14 +567,14 @@ export default function Home() {
               <h2 className="text-lg font-bold text-coca-cola-red text-right flex-shrink-0 w-32">سازمان امداد و نجات</h2>
               <div className="grid grid-cols-8 gap-1 flex-1">
               {[
-                { label: 'در دست تکمیل', value: 15678 },
-                { label: 'غنچه های هلال', value: 8923 },
-                { label: 'دانش آموزی', value: 12345 },
-                { label: 'دانشجویی', value: 5678 },
-                { label: 'طلاب', value: 2345 },
-                { label: 'روستایی و عشایری', value: 3456 },
-                { label: 'جوانان', value: 1234 },
-                { label: 'ایثار', value: 45678 },
+                { label: 'امدادگر سوم', value: 30556 },
+                { label: 'امدادگر دوم', value: 7702 },
+                { label: 'امدادگر اول', value: 13875 },
+                { label: 'نجاتگر سوم', value: 9630 },
+                { label: 'نجاتگر دوم', value: 6081 },
+                { label: 'نجاتگر اول', value: 7133 },
+                { label: 'ایثار', value: 604 },
+                { label: 'داوطلب تخصصی', value: 5137 },
               ].map((item, index) => (
                 <div
                   key={index}
