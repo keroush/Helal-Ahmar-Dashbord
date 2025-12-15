@@ -727,7 +727,6 @@ export default function Home() {
               </h2>
               <div className="grid grid-cols-4 gap-1">
                 {[
-                  { label: "در دست تکمیل", value: 1347687 },
                   { label: "غنچه های هلال", value: 12294 },
                   { label: "دانش آموزی", value: 282319 },
                   { label: "دانشجویی", value: 81130 },
@@ -735,6 +734,7 @@ export default function Home() {
                   { label: "روستایی و عشایری", value: 12725 },
                   { label: "جوانان", value: 459671 },
                   { label: "ایثار", value: 13 },
+                  { label: "در حال تکمیل", value: 1347687 },
                 ].map((item, index) => (
                   <div
                     key={index}
@@ -802,11 +802,11 @@ export default function Home() {
               </h2>
               <div className="grid grid-cols-4 gap-1">
                 {[
-                  { label: "در دست تکمیل", value: 798333 },
                   { label: "حمایت", value: 35357 },
                   { label: "هدایت", value: 71831 },
                   { label: "مشارکت", value: 249129 },
                   { label: "مهارت", value: 55577 },
+                  { label: "در حال تکمیل", value: 798333 },
                 ].map((item, index) => (
                   <div
                     key={index}
@@ -1048,7 +1048,7 @@ export default function Home() {
                               style={{ height: "100px" }}
                             >
                               <div
-                                className={`w-full bg-gradient-to-t ${colorClass} rounded-t-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg cursor-pointer relative overflow-visible`}
+                                className={`w-full bg-gradient-to-t ${colorClass} rounded-t-full transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg cursor-pointer relative overflow-visible`}
                                 style={{
                                   height: `${height}%`,
                                   minHeight: city.value > 0 ? "4px" : "0",
@@ -1185,7 +1185,7 @@ export default function Home() {
                               style={{ height: "100px" }}
                             >
                               <div
-                                className={`w-full bg-gradient-to-t ${colorClass} rounded-t-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg cursor-pointer relative overflow-visible`}
+                                className={`w-full bg-gradient-to-t ${colorClass} rounded-t-full transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg cursor-pointer relative overflow-visible`}
                                 style={{
                                   height: `${height}%`,
                                   minHeight: city.ratio > 0 ? "4px" : "0",
