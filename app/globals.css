@@ -23,22 +23,28 @@ body {
 }
 
 /* Custom scrollbar for charts */
-.chart-scrollbar::-webkit-scrollbar {
-  height: 8px;
+.overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
 }
 
-.chart-scrollbar::-webkit-scrollbar-track {
+.overflow-x-auto::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
 }
 
-.chart-scrollbar::-webkit-scrollbar-thumb {
-  background: #F40009;
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #f40009;
   border-radius: 10px;
 }
 
-.chart-scrollbar::-webkit-scrollbar-thumb:hover {
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
   background: #d60008;
+}
+
+/* Firefox scrollbar */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #f40009 #f1f1f1;
 }
 
 @keyframes fadeIn {
@@ -55,4 +61,3 @@ body {
 .animate-fade-in {
   animation: fadeIn 0.5s ease-in;
 }
-

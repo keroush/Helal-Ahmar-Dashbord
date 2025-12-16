@@ -392,15 +392,15 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-coca-cola-dark flex">
+    <main className="min-h-screen bg-coca-cola-dark flex flex-col lg:flex-row">
       {/* Left Section - Hero Card */}
-      <section className="w-1/2 flex flex-col relative bg-gradient-to-br from-coca-cola-red via-[#d60008] to-coca-cola-red shadow-inner">
+      <section className="w-full lg:w-1/2 flex flex-col relative bg-gradient-to-br from-coca-cola-red via-[#d60008] to-coca-cola-red shadow-inner min-h-screen lg:min-h-0">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none"></div>
         <div className="relative z-10 w-full flex-1 flex flex-col overflow-hidden">
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            <div className="max-w-xl mx-auto space-y-4">
+            <div className="max-w-xl mx-auto px-2 sm:px-0 space-y-4">
               {/* Title Card */}
-              <div className="bg-white rounded-lg shadow-2xl p-6 transform transition-all duration-300 relative overflow-hidden">
+              <div className="bg-white rounded-lg shadow-2xl p-3 sm:p-6 transform transition-all duration-300 relative overflow-hidden">
                 <div className="flex items-center justify-center gap-3">
                   {/* Red Moon Icon */}
                   <svg
@@ -465,7 +465,7 @@ export default function Home() {
 
               {/* Service Count Card */}
               <div className="bg-gradient-to-r from-coca-cola-red via-[#e6000a] to-coca-cola-red rounded-lg shadow-2xl p-2 transform transition-all duration-300 border-2 border-white/20 overflow-visible relative z-40">
-                <div className="flex items-center justify-around">
+                <div className="flex flex-col sm:flex-row items-center justify-around gap-2 sm:gap-0">
                   <div className="flex items-center justify-center gap-3">
                     <span className="text-md font-semibold text-white">
                       خدمت
@@ -615,7 +615,7 @@ export default function Home() {
             </div>
 
             {/* Incident Type Cards Row */}
-            <div className="max-w-2xl mx-auto relative">
+            <div className="max-w-2xl mx-auto px-2 sm:px-0 relative">
               {/* {selectedCardIndex !== null && (
               <div 
                 className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
@@ -633,7 +633,7 @@ export default function Home() {
                 }}
               />
             )} */}
-              <div className="grid grid-cols-7 gap-3 relative z-10">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2 sm:gap-3 relative z-10">
                 {incidentTypes.slice(0, 7).map((incident, index) => {
                   const style = stickyNoteStyles[index];
                   const isSelected = selectedCardIndex === index;
@@ -731,7 +731,7 @@ export default function Home() {
             </div>
 
             {/* Total Card */}
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto px-2 sm:px-0">
               <div className="bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-2xl p-2 transform transition-all duration-300 border-2 border-gray-600">
                 {selectedCardIndex !== null ? (
                   <div className="grid grid-cols-2 gap-2">
@@ -844,7 +844,7 @@ export default function Home() {
       </section>
 
       {/* Right Section */}
-      <section className="w-1/2 p-4 space-y-0 overflow-y-auto border-l-2 border-coca-cola-red relative">
+      <section className="w-full lg:w-1/2 p-2 sm:p-4 space-y-0 overflow-y-auto border-t-2 lg:border-t-0 lg:border-l-2 border-coca-cola-red relative min-h-screen lg:min-h-0">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 pointer-events-none">
           {/* Decorative shapes */}
@@ -875,7 +875,7 @@ export default function Home() {
         </div>
         <div className="relative z-10 w-full max-w-3xl mx-auto space-y-3">
           {/* 2x2 Grid - Volunteer Section */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
             {/* سازمان جوانان */}
             <div className="bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-2xl shadow-xl p-3 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative overflow-hidden">
               {/* <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div> */}
@@ -895,7 +895,7 @@ export default function Home() {
                 </svg>
                 سازمان جوانان
               </h2>
-              <div className="grid grid-cols-4 gap-1">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-1">
                 {[
                   { label: "غنچه های هلال", value: 12294 },
                   { label: "دانش آموزی", value: 282319 },
@@ -970,7 +970,7 @@ export default function Home() {
                 </svg>
                 سازمان داوطلبان
               </h2>
-              <div className="grid grid-cols-4 gap-1">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-1">
                 {[
                   { label: "حمایت", value: 35357 },
                   { label: "هدایت", value: 71831 },
@@ -1012,7 +1012,7 @@ export default function Home() {
                 </svg>
                 سازمان امداد و نجات
               </h2>
-              <div className="grid grid-cols-4 gap-1">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-1">
                 {[
                   { label: "امدادگر سوم", value: 30556 },
                   { label: "امدادگر دوم", value: 7702 },
@@ -1041,7 +1041,7 @@ export default function Home() {
 
           {/* City Chart */}
           <div className="relative">
-            <div className="flex justify-start gap-2 mb-3">
+            <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-3">
               <button
                 onClick={() => setChartView("cities")}
                 className={`px-5 py-2.5 rounded-xl font-semibold flex items-center gap-2 ${
@@ -1145,8 +1145,8 @@ export default function Home() {
                 <span className="w-8 h-0.5 bg-gradient-to-l from-transparent to-coca-cola-red rounded-full"></span>
               </h2>
               {chartView === "cities" ? (
-                <div className="">
-                  <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200">
+                <div className="overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
+                  <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200 min-w-[800px] lg:min-w-0">
                     {(() => {
                       // City data with two sets - using maximum values
                       const cityData = [
@@ -1269,8 +1269,8 @@ export default function Home() {
                   </div>
                 </div>
               ) : chartView === "ratio" ? (
-                <div className="">
-                  <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200">
+                <div className="overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
+                  <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200 min-w-[800px] lg:min-w-0">
                     {(() => {
                       // Get city totals from the cities chart data
                       const cityTotals = [
@@ -1406,8 +1406,8 @@ export default function Home() {
                   </div>
                 </div>
               ) : (
-                <div className="overflow-x-auto chart-scrollbar">
-                  <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200">
+                <div className="overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
+                  <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200 min-w-[500px] lg:min-w-0">
                     {(() => {
                       const ranksData = [
                         { name: "امدادگر سوم مرد", value: 18013 },
