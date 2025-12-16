@@ -13,7 +13,7 @@ export default function Home() {
     "cities"
   );
   const [volunteerDisplayCount, setVolunteerDisplayCount] = useState(0);
-  const [volunteerTargetCount, setVolunteerTargetCount] = useState(3541992);
+  const [volunteerTargetCount, setVolunteerTargetCount] = useState(3431992);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [customStartDate, setCustomStartDate] = useState("");
@@ -922,7 +922,7 @@ export default function Home() {
             </div>
 
             {/* Volunteer Count Card */}
-            <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 rounded-2xl shadow-xl p-4 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative overflow-hidden">
+            <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 rounded-2xl shadow-xl p-4 py-10 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
               <div className="relative z-10">
@@ -947,7 +947,7 @@ export default function Home() {
                 <p className="text-3xl font-black text-white text-center drop-shadow-lg">
                   {volunteerDisplayCount.toLocaleString("fa-IR")}
                 </p>
-                <p className="text-xs text-white/60 text-center mt-2">نفر</p>
+                {/* <p className="text-xs text-white/60 text-center mt-2">نفر</p> */}
               </div>
             </div>
 
@@ -1044,7 +1044,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-3">
               <button
                 onClick={() => setChartView("cities")}
-                className={`px-5 py-2.5 rounded-xl font-semibold flex items-center gap-2 ${
+                className={`px-5 py-2.5 rounded-xl font-semibold text-xs flex items-center gap-2 ${
                   chartView === "cities"
                     ? "bg-gradient-to-r from-coca-cola-red to-rose-600 text-white shadow-lg shadow-red-200 scale-105"
                     : "bg-white/80 backdrop-blur-sm text-gray-600 hover:bg-white hover:shadow-md border border-gray-200"
@@ -1069,11 +1069,11 @@ export default function Home() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                استان
+                داوطلبان استان
               </button>
               <button
                 onClick={() => setChartView("ratio")}
-                className={`px-5 py-2.5 rounded-xl font-semibold flex items-center gap-2 ${
+                className={`px-5 py-2.5 rounded-xl font-semibold text-xs flex items-center gap-2 ${
                   chartView === "ratio"
                     ? "bg-gradient-to-r from-coca-cola-red to-rose-600 text-white shadow-lg shadow-red-200 scale-105"
                     : "bg-white/80 backdrop-blur-sm text-gray-600 hover:bg-white hover:shadow-md border border-gray-200"
@@ -1092,11 +1092,11 @@ export default function Home() {
                     d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
                   />
                 </svg>
-                جوانان
+                جوانان استان
               </button>
               <button
                 onClick={() => setChartView("ranks")}
-                className={`px-5 py-2.5 rounded-xl font-semibold flex items-center gap-2 ${
+                className={`px-5 py-2.5 rounded-xl font-semibold text-xs flex items-center gap-2 ${
                   chartView === "ranks"
                     ? "bg-gradient-to-r from-coca-cola-red to-rose-600 text-white shadow-lg shadow-red-200 scale-105"
                     : "bg-white/80 backdrop-blur-sm text-gray-600 hover:bg-white hover:shadow-md border border-gray-200"
@@ -1115,7 +1115,7 @@ export default function Home() {
                     d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                   />
                 </svg>
-                درجات
+                درجات امدادگران
               </button>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl px-2 border border-white/50 relative overflow-hidden">
@@ -1138,74 +1138,51 @@ export default function Home() {
               <h2 className="text-lg font-bold bg-gradient-to-r from-coca-cola-red to-rose-600 bg-clip-text text-transparent text-center mb-4 pt-4 flex items-center justify-center gap-2 relative z-10">
                 <span className="w-8 h-0.5 bg-gradient-to-r from-transparent to-coca-cola-red rounded-full"></span>
                 {chartView === "cities"
-                  ? "تعداد داوطلبین بر اساس استان"
+                  ? "تعداد جمعیت داوطلبین به تفکیک استان"
                   : chartView === "ratio"
-                  ? "نسبت داوطلبین جوان به همه داوطلبین"
-                  : "تعداد داوطلبین بر اساس درجات"}
+                  ? "تعداد جمعیت جوانان به تفکیک استان"
+                  : "تعداد امدادگران به تفکیک جنسیت و درجات "}
                 <span className="w-8 h-0.5 bg-gradient-to-l from-transparent to-coca-cola-red rounded-full"></span>
               </h2>
               {chartView === "cities" ? (
                 <div className="overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
                   <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200 min-w-[800px] lg:min-w-0">
                     {(() => {
-                      // City data with two sets - using maximum values
+                      // City volunteer data
                       const cityData = [
-                        { name: "گیلان", value1: 61582, value2: 35186 },
-                        { name: "مازندران", value1: 99242, value2: 71029 },
-                        { name: "گلستان", value1: 62765, value2: 30972 },
-                        { name: "تهران", value1: 224760, value2: 175174 },
-                        { name: "سمنان", value1: 20559, value2: 13082 },
-                        { name: "زنجان", value1: 32888, value2: 20412 },
-                        { name: "قم", value1: 24063, value2: 12688 },
-                        { name: "البرز", value1: 64153, value2: 43402 },
-                        { name: "قزوین", value1: 30100, value2: 25337 },
-                        { name: "اصفهان", value1: 113554, value2: 54143 },
-                        { name: "کرمان", value1: 118268, value2: 71856 },
-                        { name: "یزد", value1: 47594, value2: 31655 },
-                        {
-                          name: "چهار محال و بختیاری",
-                          value1: 52724,
-                          value2: 27863,
-                        },
-                        {
-                          name: "آذربایجان شرقی",
-                          value1: 114902,
-                          value2: 34641,
-                        },
-                        {
-                          name: "آذربایجان غربی",
-                          value1: 47424,
-                          value2: 24196,
-                        },
-                        { name: "اردبیل", value1: 38855, value2: 20330 },
-                        {
-                          name: "سیستان و بلوچستان",
-                          value1: 54210,
-                          value2: 24669,
-                        },
-                        { name: "خراسان رضوی", value1: 142166, value2: 59384 },
-                        { name: "خراسان جنوبی", value1: 56069, value2: 22638 },
-                        { name: "خراسان شمالی", value1: 49818, value2: 32464 },
-                        { name: "خوزستان", value1: 79966, value2: 34391 },
-                        { name: "لرستان", value1: 61449, value2: 33141 },
-                        { name: "فارس", value1: 230978, value2: 117291 },
-                        {
-                          name: "کهگیلویه و بویر احمد",
-                          value1: 25725,
-                          value2: 14776,
-                        },
-                        { name: "هرمزگان", value1: 66055, value2: 29029 },
-                        { name: "بوشهر", value1: 36480, value2: 25976 },
-                        { name: "همدان", value1: 89337, value2: 25203 },
-                        { name: "کرمانشاه", value1: 70298, value2: 32548 },
-                        { name: "ایلام", value1: 27785, value2: 24682 },
-                        { name: "مرکزی", value1: 26112, value2: 12798 },
-                        { name: "کردستان", value1: 31089, value2: 28520 },
-                        { name: "مرکز مستقل کیش", value1: 405, value2: 547 },
-                      ].map((city) => ({
-                        name: city.name,
-                        value: Math.max(city.value1, city.value2),
-                      }));
+                        { name: "گیلان", value: 35186 },
+                        { name: "مازندران", value: 71029 },
+                        { name: "گلستان", value: 30972 },
+                        { name: "تهران", value: 175174 },
+                        { name: "سمنان", value: 13082 },
+                        { name: "زنجان", value: 20412 },
+                        { name: "قم", value: 12688 },
+                        { name: "البرز", value: 43402 },
+                        { name: "قزوین", value: 25337 },
+                        { name: "اصفهان", value: 54143 },
+                        { name: "کرمان", value: 71856 },
+                        { name: "یزد", value: 31655 },
+                        { name: "چهارمحال و بختیاری", value: 27863 },
+                        { name: "آذربایجان شرقی", value: 34641 },
+                        { name: "آذربایجان غربی", value: 24196 },
+                        { name: "اردبیل", value: 20330 },
+                        { name: "سیستان و بلوچستان", value: 24669 },
+                        { name: "خراسان رضوی", value: 59384 },
+                        { name: "خراسان جنوبی", value: 22638 },
+                        { name: "خراسان شمالی", value: 32464 },
+                        { name: "خوزستان", value: 34391 },
+                        { name: "لرستان", value: 33141 },
+                        { name: "فارس", value: 117291 },
+                        { name: "کهگیلویه و بویر احمد", value: 14776 },
+                        { name: "هرمزگان", value: 29029 },
+                        { name: "بوشهر", value: 25976 },
+                        { name: "همدان", value: 25203 },
+                        { name: "کرمانشاه", value: 32548 },
+                        { name: "ایلام", value: 24682 },
+                        { name: "مرکزی", value: 12798 },
+                        { name: "کردستان", value: 28520 },
+                        { name: "مرکز مستقل کیش", value: 547 },
+                      ];
 
                       const maxValue = Math.max(
                         ...cityData.map((c) => c.value)
@@ -1272,92 +1249,48 @@ export default function Home() {
                 <div className="overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
                   <div className="flex items-end justify-between gap-1 min-h-[220px] pb-6 border-b-2 border-gray-200 min-w-[800px] lg:min-w-0">
                     {(() => {
-                      // Get city totals from the cities chart data
-                      const cityTotals = [
-                        { name: "گیلان", total: 61582 },
-                        { name: "مازندران", total: 99242 },
-                        { name: "گلستان", total: 62765 },
-                        { name: "تهران", total: 224760 },
-                        { name: "سمنان", total: 20559 },
-                        { name: "زنجان", total: 32888 },
-                        { name: "قم", total: 24063 },
-                        { name: "البرز", total: 64153 },
-                        { name: "قزوین", total: 30100 },
-                        { name: "اصفهان", total: 113554 },
-                        { name: "کرمان", total: 118268 },
-                        { name: "یزد", total: 47594 },
-                        { name: "چهار محال و بختیاری", total: 52724 },
-                        { name: "آذربایجان شرقی", total: 114902 },
-                        { name: "آذربایجان غربی", total: 47424 },
-                        { name: "اردبیل", total: 38855 },
-                        { name: "سیستان و بلوچستان", total: 54210 },
-                        { name: "خراسان رضوی", total: 142166 },
-                        { name: "خراسان جنوبی", total: 56069 },
-                        { name: "خراسان شمالی", total: 49818 },
-                        { name: "خوزستان", total: 79966 },
-                        { name: "لرستان", total: 61449 },
-                        { name: "فارس", total: 230978 },
-                        { name: "کهگیلویه و بویر احمد", total: 25725 },
-                        { name: "هرمزگان", total: 66055 },
-                        { name: "بوشهر", total: 36480 },
-                        { name: "همدان", total: 89337 },
-                        { name: "کرمانشاه", total: 70298 },
-                        { name: "ایلام", total: 27785 },
-                        { name: "مرکزی", total: 26112 },
-                        { name: "کردستان", total: 31089 },
-                        { name: "مرکز مستقل کیش", total: 547 },
+                      // Youth volunteer data by city
+                      const cityData = [
+                        { name: "گیلان", value: 61582 },
+                        { name: "مازندران", value: 99242 },
+                        { name: "گلستان", value: 62765 },
+                        { name: "تهران", value: 224760 },
+                        { name: "سمنان", value: 20559 },
+                        { name: "زنجان", value: 32888 },
+                        { name: "قم", value: 24063 },
+                        { name: "البرز", value: 64153 },
+                        { name: "قزوین", value: 30100 },
+                        { name: "اصفهان", value: 113554 },
+                        { name: "کرمان", value: 118268 },
+                        { name: "یزد", value: 47594 },
+                        { name: "چهارمحال و بختیاری", value: 52724 },
+                        { name: "آذربایجان شرقی", value: 114902 },
+                        { name: "آذربایجان غربی", value: 47424 },
+                        { name: "اردبیل", value: 38855 },
+                        { name: "سیستان و بلوچستان", value: 54210 },
+                        { name: "خراسان رضوی", value: 142166 },
+                        { name: "خراسان جنوبی", value: 56069 },
+                        { name: "خراسان شمالی", value: 49818 },
+                        { name: "خوزستان", value: 79966 },
+                        { name: "لرستان", value: 61449 },
+                        { name: "فارس", value: 230978 },
+                        { name: "کهگیلویه و بویر احمد", value: 25725 },
+                        { name: "هرمزگان", value: 66055 },
+                        { name: "بوشهر", value: 36480 },
+                        { name: "همدان", value: 89337 },
+                        { name: "کرمانشاه", value: 70298 },
+                        { name: "ایلام", value: 27785 },
+                        { name: "مرکزی", value: 26112 },
+                        { name: "کردستان", value: 31089 },
+                        { name: "مرکز مستقل کیش", value: 405 },
                       ];
 
-                      // City data with random young volunteer ratios (percentage)
-                      const cityData = [
-                        { name: "گیلان", ratio: 12.5 },
-                        { name: "مازندران", ratio: 15.3 },
-                        { name: "گلستان", ratio: 18.7 },
-                        { name: "تهران", ratio: 14.2 },
-                        { name: "سمنان", ratio: 11.8 },
-                        { name: "زنجان", ratio: 16.4 },
-                        { name: "قم", ratio: 9.6 },
-                        { name: "البرز", ratio: 13.9 },
-                        { name: "قزوین", ratio: 17.2 },
-                        { name: "اصفهان", ratio: 19.5 },
-                        { name: "کرمان", ratio: 20.1 },
-                        { name: "یزد", ratio: 14.8 },
-                        { name: "چهار محال و بختیاری", ratio: 16.7 },
-                        { name: "آذربایجان شرقی", ratio: 13.4 },
-                        { name: "آذربایجان غربی", ratio: 15.9 },
-                        { name: "اردبیل", ratio: 12.3 },
-                        { name: "سیستان و بلوچستان", ratio: 18.2 },
-                        { name: "خراسان رضوی", ratio: 17.6 },
-                        { name: "خراسان جنوبی", ratio: 14.5 },
-                        { name: "خراسان شمالی", ratio: 16.1 },
-                        { name: "خوزستان", ratio: 19.3 },
-                        { name: "لرستان", ratio: 15.7 },
-                        { name: "فارس", ratio: 21.2 },
-                        { name: "کهگیلویه و بویر احمد", ratio: 13.1 },
-                        { name: "هرمزگان", ratio: 17.8 },
-                        { name: "بوشهر", ratio: 14.6 },
-                        { name: "همدان", ratio: 16.9 },
-                        { name: "کرمانشاه", ratio: 15.4 },
-                        { name: "ایلام", ratio: 12.7 },
-                        { name: "مرکزی", ratio: 11.9 },
-                        { name: "کردستان", ratio: 18.4 },
-                        { name: "مرکز مستقل کیش", ratio: 22.5 },
-                      ].map((city) => {
-                        const total =
-                          cityTotals.find((t) => t.name === city.name)?.total ||
-                          0;
-                        const youngCount = Math.round(
-                          (total * city.ratio) / 100
-                        );
-                        return { ...city, total, youngCount };
-                      });
-
-                      const maxRatio = Math.max(
-                        ...cityData.map((c) => c.ratio)
+                      const maxValue = Math.max(
+                        ...cityData.map((c) => c.value)
                       );
 
                       return cityData.map((city, idx) => {
-                        const height = (city.ratio / maxRatio) * 100;
+                        const height = (city.value / maxValue) * 100;
                         const colors = ["from-coca-cola-red to-coca-cola-red"];
                         const colorClass = colors[idx % colors.length];
                         return (
@@ -1370,14 +1303,14 @@ export default function Home() {
                               style={{ height: "100px" }}
                             >
                               <div
-                                className={`w-full bg-gradient-to-t ${colorClass} rounded-t-full transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg cursor-pointer relative overflow-visible`}
+                                className={`w-full bg-gradient-to-t ${colorClass} rounded-t-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg cursor-pointer relative overflow-visible`}
                                 style={{
                                   height: `${height}%`,
-                                  minHeight: city.ratio > 0 ? "4px" : "0",
+                                  minHeight: city.value > 0 ? "4px" : "0",
                                 }}
-                                title={`${city.name}: ${city.ratio.toFixed(
-                                  1
-                                )}%`}
+                                title={`${
+                                  city.name
+                                }: ${city.value.toLocaleString("fa-IR")}`}
                               >
                                 <div className="absolute inset-0 bg-gradient-to-t from-white/0 to-white/20"></div>
                                 <p
@@ -1386,7 +1319,7 @@ export default function Home() {
                                     transform: "rotate(-90deg)",
                                   }}
                                 >
-                                  {city.ratio.toFixed(1)}%
+                                  {city.value.toLocaleString("fa-IR")}
                                 </p>
                               </div>
                             </div>
