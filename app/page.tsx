@@ -15,6 +15,9 @@ export default function Home() {
   const [volunteerDisplayCount, setVolunteerDisplayCount] = useState(0);
   const [volunteerTargetCount, setVolunteerTargetCount] = useState(3541992);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [customStartDate, setCustomStartDate] = useState("");
+  const [customEndDate, setCustomEndDate] = useState("");
 
   // Random incidents for swiper
   const randomIncidents = [
@@ -397,15 +400,71 @@ export default function Home() {
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             <div className="max-w-xl mx-auto space-y-4">
               {/* Title Card */}
-              <div className="bg-white rounded-lg shadow-2xl p-6 transform transition-all duration-300">
-                <h1 className="text-md font-bold text-coca-cola-red text-center leading-relaxed">
-                  داشبورد رصد و پایش نیروی داوطلبی و خدمات ارائه شده توسط جمعیت
-                  هلال احمر
-                </h1>
+              <div className="bg-white rounded-lg shadow-2xl p-6 transform transition-all duration-300 relative overflow-hidden">
+                <div className="flex items-center justify-center gap-3">
+                  {/* Red Moon Icon */}
+                  <svg
+                    fill="#e21313ff"
+                    width="30px"
+                    height="30px"
+                    viewBox="0 0 24 24"
+                    id="moon-alt"
+                    data-name="Flat Color"
+                    xmlns="http://www.w3.org/2000/svg"
+                    transform="matrix(-1, 0, 0, 1, 0, 0)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        id="primary"
+                        d="M12,2h-.46a1,1,0,0,0-.44,1.86A5.94,5.94,0,0,1,14,9,6,6,0,0,1,3.93,13.4a1,1,0,0,0-1.65,1A10,10,0,1,0,12,2Z"
+                        fill="#e21313ff"
+                      />
+                    </g>
+                  </svg>
+                  <h1 className="text-sm font-bold text-coca-cola-red text-center leading-relaxed">
+                    داشبورد رصد و پایش نیروی داوطلبی و خدمات ارائه شده توسط
+                    جمعیت هلال احمر
+                  </h1>
+                  {/* Red Moon Icon */}
+                  {/* <svg
+                    fill="#e21313ff"
+                    width="30px"
+                    height="30px"
+                    viewBox="0 0 24 24"
+                    id="moon-alt"
+                    data-name="Flat Color"
+                    xmlns="http://www.w3.org/2000/svg"
+                    transform="matrix(-1, 0, 0, 1, 0, 0)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        id="primary"
+                        d="M12,2h-.46a1,1,0,0,0-.44,1.86A5.94,5.94,0,0,1,14,9,6,6,0,0,1,3.93,13.4a1,1,0,0,0-1.65,1A10,10,0,1,0,12,2Z"
+                        fill="#e21313ff"
+                      />
+                    </g>
+                  </svg> */}
+                </div>
               </div>
 
               {/* Service Count Card */}
-              <div className="bg-gradient-to-r from-coca-cola-red via-[#e6000a] to-coca-cola-red rounded-lg shadow-2xl p-2 transform transition-all duration-300 border-2 border-white/20">
+              <div className="bg-gradient-to-r from-coca-cola-red via-[#e6000a] to-coca-cola-red rounded-lg shadow-2xl p-2 transform transition-all duration-300 border-2 border-white/20 overflow-visible relative z-40">
                 <div className="flex items-center justify-around">
                   <div className="flex items-center justify-center gap-3">
                     <span className="text-md font-semibold text-white">
@@ -420,7 +479,7 @@ export default function Home() {
                       گذشته
                     </span>
                     <div className="relative inline-block">
-                      <div className="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none z-10">
+                      <div className="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none z-10">
                         <div className="bg-white/20 rounded p-1">
                           <svg
                             className="w-5 h-5 text-white"
@@ -438,37 +497,114 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <select
-                        value={selectedTime}
-                        onChange={(e) => setSelectedTime(e.target.value)}
-                        className="pl-10 pr-2 py-1.5 rounded-md border-2 border-white/30 focus:border-white focus:ring-2 focus:ring-white/20 outline-none text-white font-medium text-base bg-white/10 backdrop-blur-sm transition-all duration-200 appearance-none cursor-pointer hover:bg-white/20 shadow-sm"
-                        style={{
-                          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ffffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "right 0.5rem center",
-                          backgroundSize: "1.5em 1.5em",
-                          paddingRight: "2.5rem",
-                        }}
-                      >
-                        <option
-                          value="24"
-                          className="bg-coca-cola-red text-white"
+                      <div className="relative z-550 ml-2">
+                        <button
+                          onClick={() => setShowDatePicker(!showDatePicker)}
+                          className="pl-10 pr-2 py-1.5 rounded-md border-2 border-white/30 focus:border-white focus:ring-2 focus:ring-white/20 outline-none text-white font-medium text-base bg-white/10 backdrop-blur-sm transition-all duration-200 cursor-pointer hover:bg-white/20 shadow-sm flex items-center gap-1"
                         >
-                          24 ساعت
-                        </option>
-                        <option
-                          value="48"
-                          className="bg-coca-cola-red text-white"
-                        >
-                          48 ساعت
-                        </option>
-                        <option
-                          value="72"
-                          className="bg-coca-cola-red text-white"
-                        >
-                          72 ساعت
-                        </option>
-                      </select>
+                          <span>
+                            {selectedTime === "24"
+                              ? "24 ساعت"
+                              : selectedTime === "48"
+                              ? "48 ساعت"
+                              : selectedTime === "72"
+                              ? "72 ساعت"
+                              : "بازه سفارشی"}
+                          </span>
+                          <svg
+                            className={`w-4 h-4 transition-transform ${
+                              showDatePicker ? "rotate-180" : ""
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
+                        {/* Integrated Dropdown with Calendar */}
+                        {showDatePicker && (
+                          <div className="absolute top-full mt-1 -left-[60%] bg-gradient-to-br from-coca-cola-red to-rose-700 rounded-xl shadow-2xl z-[9999] min-w-[300px] border-2 border-white/20">
+                            {/* Quick Options */}
+                            <div className="p-2 border-b border-white/20 z-300">
+                              <div className="grid grid-cols-3 gap-2">
+                                {[
+                                  { value: "24", label: "24 ساعت" },
+                                  { value: "48", label: "48 ساعت" },
+                                  { value: "72", label: "72 ساعت" },
+                                ].map((option) => (
+                                  <button
+                                    key={option.value}
+                                    onClick={() => {
+                                      setSelectedTime(option.value);
+                                      setShowDatePicker(false);
+                                    }}
+                                    className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all ${
+                                      selectedTime === option.value
+                                        ? "bg-white text-coca-cola-red shadow-lg"
+                                        : "bg-white/20 text-white hover:bg-white/30"
+                                    }`}
+                                  >
+                                    {option.label}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                            {/* Custom Date Section */}
+                            <div className="p-3">
+                              <h3 className="text-white text-sm font-bold mb-3 text-center">
+                                انتخاب بازه زمانی
+                              </h3>
+                              <div className="space-y-3">
+                                <div className="bg-white/10 rounded-lg p-2">
+                                  <label className="block text-white/80 text-xs mb-1 text-right">
+                                    از تاریخ
+                                  </label>
+                                  <input
+                                    type="date"
+                                    value={customStartDate}
+                                    onChange={(e) =>
+                                      setCustomStartDate(e.target.value)
+                                    }
+                                    className="w-full px-3 py-2 bg-white/90 border-0 rounded-lg text-gray-800 text-sm focus:ring-2 focus:ring-white"
+                                    style={{ colorScheme: "light" }}
+                                  />
+                                </div>
+                                <div className="bg-white/10 rounded-lg p-2">
+                                  <label className="block text-white/80 text-xs mb-1 text-right">
+                                    تا تاریخ
+                                  </label>
+                                  <input
+                                    type="date"
+                                    value={customEndDate}
+                                    onChange={(e) =>
+                                      setCustomEndDate(e.target.value)
+                                    }
+                                    className="w-full px-3 py-2 bg-white/90 border-0 rounded-lg text-gray-800 text-sm focus:ring-2 focus:ring-white"
+                                    style={{ colorScheme: "light" }}
+                                  />
+                                </div>
+                                <button
+                                  onClick={() => {
+                                    if (customStartDate && customEndDate) {
+                                      setSelectedTime("custom");
+                                      setShowDatePicker(false);
+                                    }
+                                  }}
+                                  className="w-full py-2.5 bg-white text-coca-cola-red rounded-lg font-bold hover:bg-white/90 transition-colors shadow-lg"
+                                >
+                                  اعمال بازه سفارشی
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
                     <span className="text-md font-semibold text-white">
                       حوادث
@@ -511,7 +647,7 @@ export default function Home() {
                       }
                       className={`${style.bg} ${
                         style.rotation
-                      } rounded-sm shadow-lg p-1 pt-3 pb-2 transform transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:z-10 relative border-2 cursor-pointer overflow-hidden ${
+                      } rounded-sm shadow-lg p-1 pt-3 pb-2 transform transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:z-10 relative border-2 cursor-pointer overflow-visible ${
                         isSelected
                           ? "border-coca-cola-red border-opacity-80 shadow-2xl scale-105 opacity-100"
                           : hasSelection
@@ -524,22 +660,56 @@ export default function Home() {
                           : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.05)",
                       }}
                     >
-                      {/* {!isSelected && (
-                    <div 
-                      className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                      style={{
-                        opacity: 0.08,
-                        width: '80%',
-                        height: '80%',
-                        color: 'white',
-                        left: '10%',
-                        top: '10%',
-                      }}
-                      dangerouslySetInnerHTML={{
-                        __html: incidentLogos[incident.title] || ''
-                      }}
-                    />
-                  )} */}
+                      {/* Red Pin when selected */}
+                      {isSelected && (
+                        <div className="absolute -top-2 -right-2 transform -translate-x-1/2 z-20 rotate-[0.4rad]">
+                          <svg
+                            width="14"
+                            height="22"
+                            viewBox="0 0 24 32"
+                            className="drop-shadow-lg"
+                          >
+                            {/* Pin needle */}
+                            <line
+                              x1="12"
+                              y1="14"
+                              x2="12"
+                              y2="32"
+                              stroke="#9CA3AF"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                            {/* Red ball head with gradient */}
+                            <defs>
+                              <radialGradient
+                                id={`pinGradient-${index}`}
+                                cx="30%"
+                                cy="30%"
+                                r="70%"
+                              >
+                                <stop offset="0%" stopColor="#ff6b6b" />
+                                <stop offset="50%" stopColor="#dc2626" />
+                                <stop offset="100%" stopColor="#991b1b" />
+                              </radialGradient>
+                            </defs>
+                            <circle
+                              cx="12"
+                              cy="10"
+                              r="10"
+                              fill={`url(#pinGradient-${index})`}
+                            />
+                            {/* Shine highlight */}
+                            <ellipse
+                              cx="8"
+                              cy="7"
+                              rx="3"
+                              ry="2"
+                              fill="white"
+                              opacity="0.4"
+                            />
+                          </svg>
+                        </div>
+                      )}
                       <div className="flex flex-col items-center text-center relative z-10">
                         <div
                           className="w-6 h-6 mb-2 text-gray-600"
@@ -949,8 +1119,23 @@ export default function Home() {
               </button>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl px-2 border border-white/50 relative overflow-hidden">
+              {/* Background pattern */}
+              <div
+                className="absolute inset-0 opacity-[0.03]"
+                style={{
+                  backgroundImage:
+                    chartView === "cities"
+                      ? `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`
+                      : chartView === "ratio"
+                      ? `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E")`
+                      : `url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M12 0v24M0 12h24' stroke='%23dc2626' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E")`,
+                }}
+              ></div>
+              {/* Decorative corner shapes */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-coca-cola-red/5 to-transparent rounded-bl-full"></div>
+              <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-coca-cola-red/5 to-transparent rounded-tr-full"></div>
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-coca-cola-red via-rose-500 to-pink-500"></div>
-              <h2 className="text-lg font-bold bg-gradient-to-r from-coca-cola-red to-rose-600 bg-clip-text text-transparent text-center mb-4 pt-4 flex items-center justify-center gap-2">
+              <h2 className="text-lg font-bold bg-gradient-to-r from-coca-cola-red to-rose-600 bg-clip-text text-transparent text-center mb-4 pt-4 flex items-center justify-center gap-2 relative z-10">
                 <span className="w-8 h-0.5 bg-gradient-to-r from-transparent to-coca-cola-red rounded-full"></span>
                 {chartView === "cities"
                   ? "تعداد داوطلبین بر اساس استان"
