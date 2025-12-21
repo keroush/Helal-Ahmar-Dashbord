@@ -40,51 +40,51 @@ export default function Home() {
   const statusLabels = [
     {
       label: "نجات فنی",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
     },
     {
       label: "مفقودی جستجو شده توسط آنست",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>',
     },
     {
       label: "فوتی جستجو شده توسط آنست",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
     },
     {
       label: "کل فوتی در صحنه",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>',
     },
     {
       label: "کل افراد نجات یافته توسط جمعیت",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 8-4 4-2-2"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 8-4 4-2-2"/></svg>',
     },
     {
       label: "کل مصدوم سرپایی توسط جمعیت",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
     },
     {
       label: "کل مصدوم انتقالی توسط جمعیت",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="m16 8 4 4-4 4"/><path d="M20 12H8"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="m16 8 4 4-4 4"/><path d="M20 12H8"/></svg>',
     },
     {
       label: "کل مصدومان حادثه",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>',
     },
     {
       label: "کل افراد امداد رسانی شده",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
     },
     {
       label: "کل افراد حادثه دیده",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
     },
     {
       label: "خانوار",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
     },
     {
       label: "تعداد حوادث",
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>',
     },
   ];
 
@@ -293,14 +293,14 @@ export default function Home() {
 
   // SVG Logo mapping for each incident type
   const incidentLogos: { [key: string]: string } = {
-    آوار: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>`,
-    "تجمعات انبوه": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-    ترافیکی: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="M12 15v5"/><path d="M8 20h8"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>`,
-    جوی: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 13v8M8 13v8M12 15v8M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg>`,
-    "صنعتی و کارگاهی": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM3 9h18M9 3v18"/></svg>`,
-    "فوریت های پزشکی": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
-    کوهستان: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l4 8 5-5 5 15H2L8 3z"/></svg>`,
-    "زمین لرزه": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>`,
+    آوار: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>`,
+    "تجمعات انبوه": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    ترافیکی: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="M12 15v5"/><path d="M8 20h8"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>`,
+    جوی: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 13v8M8 13v8M12 15v8M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg>`,
+    "صنعتی و کارگاهی": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3h18v18H3zM3 9h18M9 3v18"/></svg>`,
+    "فوریت های پزشکی": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+    کوهستان: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 3l4 8 5-5 5 15H2L8 3z"/></svg>`,
+    "زمین لرزه": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>`,
   };
 
   // Calculate total (sum of all or just selected card)
@@ -434,12 +434,12 @@ export default function Home() {
                     xmlns="http://www.w3.org/2000/svg"
                     transform="matrix(-1, 0, 0, 1, 0, 0)"
                   >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
                     <g
                       id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
 
                     <g id="SVGRepo_iconCarrier">
@@ -465,12 +465,12 @@ export default function Home() {
                     xmlns="http://www.w3.org/2000/svg"
                     transform="matrix(-1, 0, 0, 1, 0, 0)"
                   >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
                     <g
                       id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
 
                     <g id="SVGRepo_iconCarrier">
@@ -753,44 +753,46 @@ export default function Home() {
 
             {/* Total Card */}
             <div className="max-w-2xl mx-auto px-2 sm:px-0">
-              <div className="bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-2xl p-2 transform transition-all duration-300 border-2 border-gray-600">
+              <div
+                className="bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-lg p-2"
+                style={{ direction: "rtl" }}
+              >
                 {selectedCardIndex !== null ? (
-                  <div className="grid grid-cols-2 gap-2">
-                    {statusLabels.map((item, idx) => {
-                      // Map statusLabels index to status array index
-                      // statusLabels indices 0-2 correspond to status indices 10-12, indices 3-11 correspond to status indices 15-23
-                      const statusIndex = idx < 3 ? idx + 10 : idx + 12;
+                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-2 gap-1.5">
+                    {[...statusLabels].reverse().map((item, idx) => {
+                      const reversedIdx = statusLabels.length - 1 - idx;
+                      const statusIndex =
+                        reversedIdx < 3 ? reversedIdx + 10 : reversedIdx + 12;
                       const value =
                         incidentTypes[selectedCardIndex].status[statusIndex];
 
                       return (
                         <div
                           key={idx}
-                          className="bg-white/10 rounded p-2 flex justify-between items-center gap-2"
+                          className="bg-white/10 flex justify-between items-center rounded-md p-2 text-center hover:bg-gray-200 transition-colors"
                         >
+                          <div className="flex items-center gap-2">
+                            <div
+                              className="w-5 h-5 text-white"
+                              dangerouslySetInnerHTML={{ __html: item.icon }}
+                            />
+                            <p className="text-white text-sm font-sm text-right">
+                              {item.label}
+                            </p>
+                          </div>
                           <p className="text-white text-lg font-bold">
                             {value.toLocaleString("fa-IR")}
                           </p>
-                          <div className="flex items-center gap-2 flex-1 justify-end">
-                            <p className="text-white text-sm font-medium text-right">
-                              {item.label}
-                            </p>
-                            <div
-                              className="w-4 h-4 text-white/70 flex-shrink-0"
-                              dangerouslySetInnerHTML={{ __html: item.icon }}
-                            />
-                          </div>
                         </div>
                       );
                     })}
                   </div>
                 ) : (
-                  <div className="grid grid-cols-2 gap-2">
-                    {statusLabels.map((item, idx) => {
-                      // Map statusLabels index to status array index
-                      // statusLabels indices 0-2 correspond to status indices 10-12, indices 3-11 correspond to status indices 15-23
-                      const statusIndex = idx < 3 ? idx + 10 : idx + 12;
-                      // Sum the value across all incident types
+                  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-1.5">
+                    {[...statusLabels].reverse().map((item, idx) => {
+                      const reversedIdx = statusLabels.length - 1 - idx;
+                      const statusIndex =
+                        reversedIdx < 3 ? reversedIdx + 10 : reversedIdx + 12;
                       const sumValue = incidentTypes.reduce(
                         (sum, incident) => sum + incident.status[statusIndex],
                         0
@@ -799,20 +801,20 @@ export default function Home() {
                       return (
                         <div
                           key={idx}
-                          className="bg-white/10 rounded p-2 flex justify-between items-center gap-2"
+                          className="bg-white/10 flex justify-between items-center rounded-md p-2 text-center hover:bg-gray-200 transition-colors"
                         >
+                          <div className="flex items-center gap-2">
+                            <div
+                              className="w-5 h-5 text-white"
+                              dangerouslySetInnerHTML={{ __html: item.icon }}
+                            />
+                            <p className="text-white text-sm font-sm text-right">
+                              {item.label}
+                            </p>
+                          </div>
                           <p className="text-white text-lg font-bold">
                             {sumValue.toLocaleString("fa-IR")}
                           </p>
-                          <div className="flex items-center gap-2 flex-1 justify-end">
-                            <p className="text-white text-sm font-medium text-right">
-                              {item.label}
-                            </p>
-                            <div
-                              className="w-4 h-4 text-white/70 flex-shrink-0"
-                              dangerouslySetInnerHTML={{ __html: item.icon }}
-                            />
-                          </div>
                         </div>
                       );
                     })}
@@ -1183,7 +1185,7 @@ export default function Home() {
                       ? `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`
                       : chartView === "ratio"
                       ? `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E")`
-                      : `url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M12 0v24M0 12h24' stroke='%23dc2626' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E")`,
+                      : `url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M12 0v24M0 12h24' stroke='%23dc2626' strokeWidth='1'/%3E%3C/g%3E%3C/svg%3E")`,
                 }}
               ></div>
               {/* Decorative corner shapes */}
@@ -1193,9 +1195,9 @@ export default function Home() {
               <h2 className="text-lg font-bold bg-gradient-to-r from-coca-cola-red to-rose-600 bg-clip-text text-transparent text-center mb-4 pt-4 flex items-center justify-center gap-2 relative z-10">
                 <span className="w-8 h-0.5 bg-gradient-to-r from-transparent to-coca-cola-red rounded-full"></span>
                 {chartView === "cities"
-                  ? "تعداد جمعیت داوطلبین به تفکیک استان"
+                  ? "تعداد اعضای سازمان داوطلبان به تفکیک استان"
                   : chartView === "ratio"
-                  ? "تعداد جمعیت جوانان به تفکیک استان"
+                  ? "تعداد اعضای سازمان جوانان به تفکیک استان"
                   : "تعداد امدادگران به تفکیک جنسیت و درجات "}
                 <span className="w-8 h-0.5 bg-gradient-to-l from-transparent to-coca-cola-red rounded-full"></span>
               </h2>
