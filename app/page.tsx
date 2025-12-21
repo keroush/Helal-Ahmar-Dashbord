@@ -769,12 +769,16 @@ export default function Home() {
                       return (
                         <div
                           key={idx}
-                          className="bg-white/10 flex justify-between items-center rounded-md p-2 text-center hover:bg-gray-200 transition-colors"
+                          className="bg-white/10 flex justify-between items-center rounded-md p-2 text-center hover:bg-white/20 transition-colors"
                         >
                           <div className="flex items-center gap-2">
                             <div
                               className="w-5 h-5 text-white"
-                              dangerouslySetInnerHTML={{ __html: item.icon }}
+                              dangerouslySetInnerHTML={
+                                item.icon
+                                  ? { __html: item.icon }
+                                  : { __html: statusLabels[8].icon }
+                              }
                             />
                             <p className="text-white text-sm font-sm text-right">
                               {item.label}
@@ -801,12 +805,16 @@ export default function Home() {
                       return (
                         <div
                           key={idx}
-                          className="bg-white/10 flex justify-between items-center rounded-md p-2 text-center hover:bg-gray-200 transition-colors"
+                          className="bg-white/10 flex justify-between items-center rounded-md p-2 text-center hover:bg-white/20 transition-colors"
                         >
                           <div className="flex items-center gap-2">
                             <div
                               className="w-5 h-5 text-white"
-                              dangerouslySetInnerHTML={{ __html: item.icon }}
+                              dangerouslySetInnerHTML={
+                                item.icon
+                                  ? { __html: item.icon }
+                                  : { __html: statusLabels[8].icon }
+                              }
                             />
                             <p className="text-white text-sm font-sm text-right">
                               {item.label}
